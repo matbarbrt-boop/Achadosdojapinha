@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Achados do Japinha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-body">
+
+    <aside class="sidebar">
+        <div class="logo">JAPINHA<span>.</span></div>
+        <nav>
+            <ul>
+                <li class="active"><a href="#"><i class="fas fa-plus-circle"></i> <span>Novo Item</span></a></li>
+                <li><a href="index.html" target="_blank"><i class="fas fa-external-link-alt"></i> <span>Ver Loja</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="admin-header">
+            <h1>Painel de Controle</h1>
+            <p>Gerencie seus itens em tempo real para todos os dispositivos.</p>
+        </header>
+
+        <section class="admin-card">
+            <form id="product-form">
+                <div class="form-group">
+                    <label>Nome do Produto</label>
+                    <input type="text" id="p-name" placeholder="Ex: Action Figure Raro" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Preço (R$)</label>
+                        <input type="number" id="p-price" step="0.01" placeholder="0.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Promoção (Opcional)</label>
+                        <input type="number" id="p-promo" step="0.01" placeholder="0.00">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Link de Compra</label>
+                    <input type="url" id="p-link" placeholder="https://..." required>
+                </div>
+                <div class="form-group">
+                    <label class="custom-file-upload">
+                        <input type="file" id="p-image" accept="image/*" required>
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Escolher foto do dispositivo</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn-submit">Publicar Agora</button>
+            </form>
+        </section>
+
+        <section class="admin-list-section">
+            <h2>Itens Ativos</h2>
+            <div id="admin-product-list" class="admin-grid"></div>
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
